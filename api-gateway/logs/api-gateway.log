@@ -705,3 +705,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2023-08-04T15:41:32.561-05:00  INFO [api-gateway,,] 36801 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2023-08-04T15:46:32.596-05:00  INFO [api-gateway,,] 36801 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2023-08-04T15:51:32.598-05:00  INFO [api-gateway,,] 36801 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-08-04T15:56:32.603-05:00  INFO [api-gateway,,] 36801 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
