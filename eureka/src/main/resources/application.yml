@@ -17,11 +17,11 @@ eureka:
     #wait time for subsequent sync
     waitTimeInMsWhenSyncEmpty: 0
 
-# logging:
-#   file:
-#     name: logs/eureka.log
-#   level:
-#     org.springframework: INFO
-#   pattern:
-#     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+logging:
+  file:
+    name: logs/eureka.log
+  level:
+    org.springframework: INFO
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
     
