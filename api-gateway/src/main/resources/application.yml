@@ -1,0 +1,50 @@
+server:
+  port: 8429
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      default-filters: 
+      - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowed-methods: "*"
+            allowed-headers: "*"
+
+  sleuth:
+    web:
+      skip-pattern: /api-docs.*|/swagger.*|.*\.png|.*\.css|.*\.js|.*\.html|/favicon.ico|/hystrix.stream|/actuator.*
+    reactor:
+      instrumentation-type: decorate-on-each
+
+#Register in Eureka Server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8478/eureka
+
+# management:
+#   tracing:
+#     sampling:
+#       probability: 1.0
+#   zipkin:
+#      tracing:
+#       endpoint: http://127.0.0.1:9411/api/v2/spans 
+
+# logging:
+#   file:
+#     name: logs/api-gateway.log
+#   level:
+#     org.springframework: INFO
+#   pattern:
+#     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+#Enable discovery locator

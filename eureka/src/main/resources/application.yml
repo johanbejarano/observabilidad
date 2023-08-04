@@ -1,0 +1,27 @@
+#Application Name
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8478
+
+eureka:
+  client:
+    #telling the server not to register himself in the service registry
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:8478/eureka
+  server:
+    #wait time for subsequent sync
+    waitTimeInMsWhenSyncEmpty: 0
+
+# logging:
+#   file:
+#     name: logs/eureka.log
+#   level:
+#     org.springframework: INFO
+#   pattern:
+#     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+    
