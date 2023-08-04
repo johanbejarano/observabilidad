@@ -29,7 +29,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8478/eureka
+      defaultZone: http://127.0.0.1:8888/eureka
 
 # management:
 #   tracing:
