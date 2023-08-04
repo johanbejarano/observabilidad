@@ -1,4 +1,4 @@
-package com.vortexbird.observability.microa.controller;
+package com.vortexbird.observability.microb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vortexbird.observability.microa.feign.ChainClient;
+import com.vortexbird.observability.microb.feign.ChainClient;
 
 import brave.ScopedSpan;
 import brave.Tracer;
@@ -25,25 +25,6 @@ public class MyController {
 
   @Autowired
   private Tracer tracer;
-
-  @GetMapping(path = "/sayhi/{name}")
-  public ResponseEntity<?> sayhi(@PathVariable("name") String name) throws Exception {
-
-    log.debug("MyController sayHi executed.");
-    return ResponseEntity.ok().body("Hi " + name);
-
-  }
-
-  @GetMapping(path = "/error")
-  public ResponseEntity<?> error() throws Exception {
-
-    log.debug("MyController error executed.");
-
-    log.error("An error has ocurred...");
-
-    return ResponseEntity.badRequest().body("My Error");
-
-  }
 
   @GetMapping(path = "/chain/{name}")
   public ResponseEntity<?> chain(@PathVariable("name") String name) throws Exception {

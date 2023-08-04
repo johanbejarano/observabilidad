@@ -39,12 +39,12 @@ management:
      tracing:
       endpoint: http://127.0.0.1:9411/api/v2/spans 
 
-# logging:
-#   file:
-#     name: logs/api-gateway.log
-#   level:
-#     org.springframework: INFO
-#   pattern:
-#     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+logging:
+  file:
+    name: logs/api-gateway.log
+  level:
+    org.springframework: INFO
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
 #Enable discovery locator
